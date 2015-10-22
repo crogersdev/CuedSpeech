@@ -13,4 +13,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <ImageView
+        android:id="@+id/section_graphic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/section_label"/>
+
+    <TextView
+        android:id="@+id/section_phoneme"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/section_graphic"/>
+
+    <TextView
+        android:id="@+id/section_mnemonic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/section_graphic"/>
+
 </RelativeLayout>

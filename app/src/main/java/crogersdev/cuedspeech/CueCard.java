@@ -50,6 +50,30 @@ public class CueCard extends Fragment {
             case 8:
                 rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.handshape_8_icon);
                 break;
+            case 9:
+                rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.vowel_mouth);
+                break;
+            case 10:
+                rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.vowel_chin);
+                break;
+            case 11:
+                rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.vowel_throat);
+                break;
+            case 12:
+                rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.vowel_side);
+                break;
+            case 13:
+                rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.vowel_side_fwd);
+                break;
+            case 14:
+                rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.vowel_side_down);
+                break;
+            case 15:
+                //rootView.findViewById(R.id.cue_image).setBackgroundResource();
+                break;
+            case 16:
+                //rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.handshape_8_icon);
+                break;
         }
 
         return rootView;

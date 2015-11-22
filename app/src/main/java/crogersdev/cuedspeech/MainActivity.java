@@ -31,8 +31,16 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
-                viewPager.setCurrentItem(tab.getPosition());
-                Log.d("crogersdev, MainActivity", "onTabSelected, tab value is " + tab.toString());
+                switch (tab.getPosition()) {
+                    case 0:
+                        viewPager.setAdapter(consonantsPagerAdapter);
+                        Log.d("crogersdev:MainActivity", "tab 0 selected, setting pager adapter to consonants");
+                        break;
+                    case 1:
+                        viewPager.setAdapter(vowelPagerAdapter);
+                        Log.d("crogersdev:MainActivity", "tab 1 selected, setting pager adapter to vowels");
+                        break;
+                }
             }
 
             @Override

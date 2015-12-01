@@ -20,7 +20,6 @@ public class CueCard extends Fragment {
         View rootView = inflater.inflate(R.layout.consonants_tab_view, container, false);
 
         Bundle args = getArguments();
-        //((TextView)rootView.findViewById(R.id.text)).setText("Page " + args.getInt("page_position"));
         ((TextView)rootView.findViewById(R.id.cuecard_label)).setText(args.getString("label"));
         ((TextView)rootView.findViewById(R.id.cuecard_phonemes)).setText(args.getString("phonemes"));
         ((TextView)rootView.findViewById(R.id.cuecard_mnemonic)).setText(args.getString("mnemonic"));
@@ -69,10 +68,10 @@ public class CueCard extends Fragment {
                 rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.vowel_side_down);
                 break;
             case 15:
-                //rootView.findViewById(R.id.cue_image).setBackgroundResource();
+                rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.vowel_chin_throat);
                 break;
             case 16:
-                //rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.handshape_8_icon);
+                rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.vowel_side_throat);
                 break;
         }
 

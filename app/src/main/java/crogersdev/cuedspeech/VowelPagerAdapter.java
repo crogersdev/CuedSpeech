@@ -53,7 +53,7 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                 return fragment;
             case 4:
                 Log.d("VowelPagerAdapter", "position = 5");
-                args.putString("label", "side forward");
+                args.putString("label", "Side Forward");
                 args.putString("phonemes", "/oe/, /ah/");
                 args.putString("mnemonic", "boat dock");
                 args.putInt("cue_image", 13);
@@ -74,7 +74,7 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                 return fragment;
             case 7:
                 Log.d("VowelPagerAdapter", "position = 8");
-                args.putString("label", "Handshape 8");
+                args.putString("label", "Side to 5 Throat");
                 args.putString("phonemes", "/ie/, /ou/");
                 args.putString("mnemonic", "light house");
                 args.putInt("cue_image", 16);

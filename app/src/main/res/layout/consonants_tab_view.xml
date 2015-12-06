@@ -13,12 +13,14 @@
         android:layout_height="wrap_content"
         android:text="Handshape Number"
         android:id="@+id/cuecard_label" />
-    <TextView
+    <EditText
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="Catchy Mnemonic"
         android:id="@+id/cuecard_mnemonic"
-        android:layout_below="@+id/cuecard_label"/>
+        android:layout_below="@+id/cuecard_label"
+        android:cursorVisible="false"
+        android:background="@android:color/transparent"/>
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

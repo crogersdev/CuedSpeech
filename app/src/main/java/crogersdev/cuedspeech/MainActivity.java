@@ -1,6 +1,6 @@
 package crogersdev.cuedspeech;
 
-import android.app.ActionBar;
+import android.content.SharedPreferences;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -9,6 +9,8 @@ import android.os.Bundle;
 import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
+
+    SharedPreferences mSharedPrefs;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,5 +55,8 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+
+
     }
 }

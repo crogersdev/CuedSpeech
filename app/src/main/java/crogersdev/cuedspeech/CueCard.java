@@ -1,6 +1,7 @@
 package crogersdev.cuedspeech;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.AttributeSet;
@@ -15,6 +16,7 @@ import android.widget.TextView;
  * Created by chris on 10/24/15.
  */
 public class CueCard extends Fragment {
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.consonants_tab_view, container, false);
@@ -24,6 +26,7 @@ public class CueCard extends Fragment {
         ((TextView)rootView.findViewById(R.id.cuecard_phonemes)).setText(args.getString("phonemes"));
         ((TextView)rootView.findViewById(R.id.cuecard_mnemonic)).setText(args.getString("mnemonic"));
         Log.d("crogersdev", "cue_image is: " + args.getInt("cue_image"));
+
         switch (args.getInt("cue_image")) {
             case 1:
                 rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.handshape_1_icon);

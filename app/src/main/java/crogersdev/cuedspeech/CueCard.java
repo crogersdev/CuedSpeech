@@ -4,11 +4,14 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,7 +24,7 @@ public class CueCard extends Fragment {
     private String mMnemonicStr;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.consonants_tab_view, container, false);
 
         mSharedPreferences = this.getContext().getSharedPreferences("MnemonicPrefs", Context.MODE_PRIVATE);
@@ -29,8 +32,10 @@ public class CueCard extends Fragment {
         Bundle args = getArguments();
         ((TextView)rootView.findViewById(R.id.cuecard_label)).setText(args.getString("label"));
         ((TextView)rootView.findViewById(R.id.cuecard_phonemes)).setText(args.getString("phonemes"));
-        ((TextView)rootView.findViewById(R.id.cuecard_mnemonic)).setText(args.getString("mnemonic"));
-        mMnemonicStr = args.getString("mnemonic");
+
+        EditText mnemonicField = (EditText)rootView.findViewById(R.id.cuecard_mnemonic);
+        mnemonicField.setText(args.getString("mnemonic"));
+
         Log.d("crogersdev", "cue_image is: " + args.getInt("cue_image"));
 
         switch (args.getInt("cue_image")) {
@@ -83,6 +88,19 @@ public class CueCard extends Fragment {
                 rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.vowel_side_throat);
                 break;
         }
+
+        mnemonicField.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                mMnemonicStr = s.toString();
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) { }
+        });
 
         SharedPreferences.Editor prefsEditor = mSharedPreferences.edit();
         prefsEditor.putString("mnemonic", mMnemonicStr);

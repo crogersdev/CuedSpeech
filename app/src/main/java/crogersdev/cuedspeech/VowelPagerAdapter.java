@@ -1,6 +1,7 @@
 package crogersdev.cuedspeech;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -9,6 +10,7 @@ import android.util.Log;
 
 public class VowelPagerAdapter extends FragmentStatePagerAdapter {
     protected Context mContext;
+    protected SharedPreferences mSharedPrefs;
 
     public VowelPagerAdapter(FragmentManager fm, Context cxt) {
         super(fm);
@@ -27,6 +29,7 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                 Log.d("VowelPagerAdapter", "position = 1");
                 args.putString("label", "Mouth");
                 args.putString("phonemes", "/ee/, /ur/");
+
                 args.putString("mnemonic", "leisure");
                 args.putInt("cue_image", 9);
                 return vowelCueCard;

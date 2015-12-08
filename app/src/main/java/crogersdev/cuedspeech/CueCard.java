@@ -17,14 +17,20 @@ import android.widget.TextView;
  */
 public class CueCard extends Fragment {
 
+    private SharedPreferences mSharedPreferences;
+    private String mMnemonicStr;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.consonants_tab_view, container, false);
+
+        mSharedPreferences = this.getContext().getSharedPreferences("MnemonicPrefs", Context.MODE_PRIVATE);
 
         Bundle args = getArguments();
         ((TextView)rootView.findViewById(R.id.cuecard_label)).setText(args.getString("label"));
         ((TextView)rootView.findViewById(R.id.cuecard_phonemes)).setText(args.getString("phonemes"));
         ((TextView)rootView.findViewById(R.id.cuecard_mnemonic)).setText(args.getString("mnemonic"));
+        mMnemonicStr = args.getString("mnemonic");
         Log.d("crogersdev", "cue_image is: " + args.getInt("cue_image"));
 
         switch (args.getInt("cue_image")) {
@@ -77,6 +83,10 @@ public class CueCard extends Fragment {
                 rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.vowel_side_throat);
                 break;
         }
+
+        SharedPreferences.Editor prefsEditor = mSharedPreferences.edit();
+        prefsEditor.putString("mnemonic", mMnemonicStr);
+        prefsEditor.commit();
 
         return rootView;
     }

@@ -1,6 +1,7 @@
 package crogersdev.cuedspeech;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -9,6 +10,8 @@ import android.util.Log;
 
 public class ConsonantsPagerAdapter extends FragmentStatePagerAdapter {
     protected Context mContext;
+    protected SharedPreferences mSharedPrefs;
+    protected String mMnemonicStr;
 
     public ConsonantsPagerAdapter(FragmentManager fm, Context cxt) {
         super(fm);
@@ -26,7 +29,15 @@ public class ConsonantsPagerAdapter extends FragmentStatePagerAdapter {
             case 0:
                 Log.d("ConsonantsPagerAdapter", "position = 1");
                 args.putString("label", "Handshape 1");
-                args.putString("phonemes", "/d/, /p/, /zh/");
+
+                mSharedPrefs.getString("mnemonic", mMnemonicStr);
+                if (mMnemonicStr == "") {
+                    args.putString("phonemes", mMnemonicStr);
+                }
+                else {
+                    args.putString("phonemes", "/ee/, /ur/");
+                }
+
                 args.putString("mnemonic", "deep treasure");
                 args.putInt("cue_image", 1);
                 return fragment;

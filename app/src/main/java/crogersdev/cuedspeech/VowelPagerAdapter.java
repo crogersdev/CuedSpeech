@@ -11,6 +11,7 @@ import android.util.Log;
 public class VowelPagerAdapter extends FragmentStatePagerAdapter {
     protected Context mContext;
     protected SharedPreferences mSharedPrefs;
+    protected String mMnemonicStr;
 
     public VowelPagerAdapter(FragmentManager fm, Context cxt) {
         super(fm);
@@ -30,7 +31,15 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                 args.putString("label", "Mouth");
                 args.putString("phonemes", "/ee/, /ur/");
 
-                args.putString("mnemonic", "leisure");
+                mSharedPrefs.getString("mnemonic", mMnemonicStr);
+                if (mMnemonicStr == "") {
+                    args.putString("mnemonic", mMnemonicStr);
+                }
+                else {
+                    args.putString("mnemonic", "leisure");
+                }
+
+
                 args.putInt("cue_image", 9);
                 return vowelCueCard;
             case 1:

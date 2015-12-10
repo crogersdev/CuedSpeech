@@ -16,6 +16,8 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
     public VowelPagerAdapter(FragmentManager fm, Context cxt) {
         super(fm);
         mContext = cxt;
+
+        mSharedPrefs = mContext.getSharedPreferences("MnemonicPrefs", Context.MODE_PRIVATE);
     }
 
     @Override
@@ -32,7 +34,7 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                 args.putString("phonemes", "/ee/, /ur/");
 
                 mSharedPrefs.getString("mnemonic", mMnemonicStr);
-                if (mMnemonicStr == "") {
+                if (mMnemonicStr != "") {
                     args.putString("mnemonic", mMnemonicStr);
                 }
                 else {

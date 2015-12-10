@@ -16,6 +16,8 @@ public class ConsonantsPagerAdapter extends FragmentStatePagerAdapter {
     public ConsonantsPagerAdapter(FragmentManager fm, Context cxt) {
         super(fm);
         mContext = cxt;
+
+        mSharedPrefs = mContext.getSharedPreferences("MnemonicPrefs", Context.MODE_PRIVATE);
     }
 
     @Override
@@ -29,16 +31,14 @@ public class ConsonantsPagerAdapter extends FragmentStatePagerAdapter {
             case 0:
                 Log.d("ConsonantsPagerAdapter", "position = 1");
                 args.putString("label", "Handshape 1");
-
+                args.putString("phonemes", "/ee/, /ur/");
                 mSharedPrefs.getString("mnemonic", mMnemonicStr);
-                if (mMnemonicStr == "") {
+                if (mMnemonicStr != "") {
                     args.putString("phonemes", mMnemonicStr);
                 }
                 else {
-                    args.putString("phonemes", "/ee/, /ur/");
+                    args.putString("mnemonic", "deep treasure");
                 }
-
-                args.putString("mnemonic", "deep treasure");
                 args.putInt("cue_image", 1);
                 return fragment;
             case 1:

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="consonant_imgs">
+        <item>@drawable/handshape_1_icon</item>
+        <item>@drawable/handshape_2_icon</item>
+        <item>@drawable/handshape_3_icon</item>
+        <item>@drawable/handshape_4_icon</item>
+        <item>@drawable/handshape_5_icon</item>
+        <item>@drawable/handshape_6_icon</item>
+        <item>@drawable/handshape_7_icon</item>
+        <item>@drawable/handshape_8_icon</item>
+    </string-array>
+
+    <string-array name="vowel_imgs">
+        <item>@drawable/vowel_mouth</item>
+        <item>@drawable/vowel_chin</item>
+        <item>@drawable/vowel_throat</item>
+        <item>@drawable/vowel_side</item>
+        <item>@drawable/vowel_side_fwd</item>
+        <item>@drawable/vowel_side_down</item>
+        <item>@drawable/vowel_chin_throat</item>
+        <item>@drawable/vowel_side_throat</item>
+    </string-array>
+
+</resources>

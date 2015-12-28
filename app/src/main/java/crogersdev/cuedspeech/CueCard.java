@@ -36,58 +36,9 @@ public class CueCard extends Fragment {
         EditText mnemonicField = (EditText)rootView.findViewById(R.id.cuecard_mnemonic);
         mnemonicField.setText(args.getString("mnemonic"));
 
-        Log.d("crogersdev", "cue_image is: " + args.getInt("cue_image"));
+        Log.d("CueCard", "cue_image is: " + args.getInt("cue_image"));
 
-        switch (args.getInt("cue_image")) {
-            case 1:
-                rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.handshape_1_icon);
-                break;
-            case 2:
-                rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.handshape_2_icon);
-                break;
-            case 3:
-                rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.handshape_3_icon);
-                break;
-            case 4:
-                rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.handshape_4_icon);
-                break;
-            case 5:
-                rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.handshape_5_icon);
-                break;
-            case 6:
-                rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.handshape_6_icon);
-                break;
-            case 7:
-                rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.handshape_7_icon);
-                break;
-            case 8:
-                rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.handshape_8_icon);
-                break;
-            case 9:
-                rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.vowel_mouth);
-                break;
-            case 10:
-                rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.vowel_chin);
-                break;
-            case 11:
-                rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.vowel_throat);
-                break;
-            case 12:
-                rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.vowel_side);
-                break;
-            case 13:
-                rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.vowel_side_fwd);
-                break;
-            case 14:
-                rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.vowel_side_down);
-                break;
-            case 15:
-                rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.vowel_chin_throat);
-                break;
-            case 16:
-                rootView.findViewById(R.id.cue_image).setBackgroundResource(R.drawable.vowel_side_throat);
-                break;
-        }
+        rootView.findViewById(R.id.cue_image).setBackgroundResource(args.getInt("cue_image"));
 
         mnemonicField.addTextChangedListener(new TextWatcher() {
             @Override
@@ -103,7 +54,7 @@ public class CueCard extends Fragment {
         });
 
         SharedPreferences.Editor prefsEditor = mSharedPreferences.edit();
-        prefsEditor.putString("mnemonic", mMnemonicStr);
+        prefsEditor.putString("mnemonic_" + Integer.toString(R.id.cue_image), mMnemonicStr);
         prefsEditor.commit();
 
         return rootView;

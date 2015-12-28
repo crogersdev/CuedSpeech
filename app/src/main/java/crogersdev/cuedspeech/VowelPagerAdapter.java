@@ -34,7 +34,7 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                 args.putString("phonemes", "/ee/, /ur/");
 
                 mSharedPrefs.getString("mnemonic_9", mMnemonicStr);
-                if (mMnemonicStr != "") {
+                if (mMnemonicStr != null) {
                     args.putString("mnemonic", mMnemonicStr);
                 }
                 else {
@@ -43,13 +43,14 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
 
                 args.putInt("cue_image", CueImg.VOWEL_MOUTH.id);
                 return vowelCueCard;
+
             case 1:
                 Log.d("VowelPagerAdapter", "position = 2");
                 args.putString("label", "Chin");
                 args.putString("phonemes", "/aw/, /ue/, /e/");
 
                 mSharedPrefs.getString("mnemonic_10", mMnemonicStr);
-                if (mMnemonicStr != "") {
+                if (mMnemonicStr != null) {
                     args.putString("mnemonic", mMnemonicStr);
                 }
                 else {
@@ -58,13 +59,14 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
 
                 args.putInt("cue_image", CueImg.VOWEL_CHIN.id);
                 return vowelCueCard;
+
             case 2:
                 Log.d("VowelPagerAdapter", "position = 3");
                 args.putString("label", "Throat");
                 args.putString("phonemes", "/oo/, /i/, /a/");
 
                 mSharedPrefs.getString("mnemonic_11", mMnemonicStr);
-                if (mMnemonicStr != "") {
+                if (mMnemonicStr != null) {
                     args.putString("mnemonic", mMnemonicStr);
                 }
                 else {
@@ -73,13 +75,14 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
 
                 args.putInt("cue_image", CueImg.VOWEL_THROAT.id);
                 return vowelCueCard;
+
             case 3:
                 Log.d("VowelPagerAdapter", "position = 4");
                 args.putString("label", "Side");
                 args.putString("phonemes", "consonant alone");
 
                 mSharedPrefs.getString("mnemonic_12", mMnemonicStr);
-                if (mMnemonicStr != "") {
+                if (mMnemonicStr != null) {
                     args.putString("mnemonic", mMnemonicStr);
                 }
                 else {
@@ -94,7 +97,7 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                 args.putString("phonemes", "/oe/, /ah/");
 
                 mSharedPrefs.getString("mnemonic_13", mMnemonicStr);
-                if (mMnemonicStr != "") {
+                if (mMnemonicStr != null) {
                     args.putString("mnemonic", mMnemonicStr);
                 }
                 else {
@@ -109,7 +112,7 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                 args.putString("phonemes", "/uh/");
 
                 mSharedPrefs.getString("mnemonic_14", mMnemonicStr);
-                if (mMnemonicStr != "") {
+                if (mMnemonicStr != null) {
                     args.putString("mnemonic", mMnemonicStr);
                 }
                 else {
@@ -124,7 +127,7 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                 args.putString("phonemes", "/oi/, /ay/");
 
                 mSharedPrefs.getString("mnemonic_15", mMnemonicStr);
-                if (mMnemonicStr != "") {
+                if (mMnemonicStr != null) {
                     args.putString("mnemonic", mMnemonicStr);
                 }
                 else {
@@ -139,7 +142,7 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                 args.putString("phonemes", "/ie/, /ou/");
 
                 mSharedPrefs.getString("mnemonic_16", mMnemonicStr);
-                if (mMnemonicStr != "") {
+                if (mMnemonicStr != null) {
                     args.putString("mnemonic", mMnemonicStr);
                 }
                 else {

@@ -33,20 +33,23 @@ public class ConsonantsPagerAdapter extends FragmentStatePagerAdapter {
                 args.putString("label", "Handshape 1");
                 args.putString("phonemes", "/ee/, /ur/");
                 mSharedPrefs.getString("mnemonic", mMnemonicStr);
-                if (mMnemonicStr != "") {
+                if (mMnemonicStr != null) {
+                    Log.d("crogersdev", "putting mMnemonicStr: " + mMnemonicStr);
                     args.putString("phonemes", mMnemonicStr);
                 }
                 else {
+                    Log.d("crogersdev", "putting in hard coded string");
                     args.putString("mnemonic", "deep treasure");
                 }
                 args.putInt("cue_image", CueImg.HANDSHAPE1.id);
                 return fragment;
+
             case 1:
                 Log.d("ConsonantsPagerAdapter", "position = 2");
                 args.putString("label", "Handshape 2");
                 args.putString("phonemes", "/th/, /c/, /v/, /z/");
                 mSharedPrefs.getString("mnemonic", mMnemonicStr);
-                if (mMnemonicStr != "") {
+                if (mMnemonicStr != null) {
                     args.putString("phonemes", mMnemonicStr);
                 }
                 else {
@@ -54,46 +57,88 @@ public class ConsonantsPagerAdapter extends FragmentStatePagerAdapter {
                 }
                 args.putInt("cue_image", CueImg.HANDSHAPE2.id);
                 return fragment;
+
             case 2:
                 Log.d("ConsonantsPagerAdapter", "position = 3");
                 args.putString("label", "Handshape 3");
                 args.putString("phonemes", "/r/, /h/, /s/");
-                args.putString("mnemonic", "sea horse");
+                mSharedPrefs.getString("mnemonic", mMnemonicStr);
+                if (mMnemonicStr != null) {
+                    args.putString("phonemes", mMnemonicStr);
+                }
+                else {
+                    args.putString("mnemonic", "sea horse");
+                }
                 args.putInt("cue_image", CueImg.HANDSHAPE3.id);
                 return fragment;
+
             case 3:
                 Log.d("ConsonantsPagerAdapter", "position = 4");
                 args.putString("label", "Handshape 4");
                 args.putString("phonemes", "/wh/, /b/, /n/");
-                args.putString("mnemonic", "white bone");
+                mSharedPrefs.getString("mnemonic", mMnemonicStr);
+                if (mMnemonicStr != null) {
+                    args.putString("phonemes", mMnemonicStr);
+                }
+                else {
+                    args.putString("mnemonic", "white bone");
+                }
                 args.putInt("cue_image", CueImg.HANDSHAPE4.id);
                 return fragment;
+
             case 4:
                 Log.d("ConsonantsPagerAdapter", "position = 5");
                 args.putString("label", "Handshape 5");
                 args.putString("phonemes", "/m/, /t/, /f/");
-                args.putString("mnemonic", "my taffy");
+                mSharedPrefs.getString("mnemonic", mMnemonicStr);
+                if (mMnemonicStr != null) {
+                    args.putString("phonemes", mMnemonicStr);
+                }
+                else {
+                    args.putString("mnemonic", "my taffy");
+                }
                 args.putInt("cue_image", CueImg.HANDSHAPE5.id);
                 return fragment;
+
             case 5:
                 Log.d("ConsonantsPagerAdapter", "position = 6");
                 args.putString("label", "Handshape 6");
                 args.putString("phonemes", "/w/, /sh/, /l/");
-                args.putString("mnemonic", "wet shell");
+                mSharedPrefs.getString("mnemonic", mMnemonicStr);
+                if (mMnemonicStr != null) {
+                    args.putString("phonemes", mMnemonicStr);
+                }
+                else {
+                    args.putString("mnemonic", "wet shell");
+                }
                 args.putInt("cue_image", CueImg.HANDSHAPE6.id);
                 return fragment;
+
             case 6:
                 Log.d("ConsonantsPagerAdapter", "position = 7");
                 args.putString("label", "Handshape 7");
                 args.putString("phonemes", "/th/, /j/, /gg/");
-                args.putString("mnemonic", "thin jogger");
+                mSharedPrefs.getString("mnemonic", mMnemonicStr);
+                if (mMnemonicStr != null) {
+                    args.putString("phonemes", mMnemonicStr);
+                }
+                else {
+                    args.putString("mnemonic", "thin jogger");
+                }
                 args.putInt("cue_image", CueImg.HANDSHAPE7.id);
                 return fragment;
+
             case 7:
                 Log.d("ConsonantsPagerAdapter", "position = 8");
                 args.putString("label", "Handshape 8");
                 args.putString("phonemes", "/y/, /ng/, /ch/");
-                args.putString("mnemonic", "young child");
+                mSharedPrefs.getString("mnemonic", mMnemonicStr);
+                if (mMnemonicStr != null) {
+                    args.putString("phonemes", mMnemonicStr);
+                }
+                else {
+                    args.putString("mnemonic", "young child");
+                }
                 args.putInt("cue_image", CueImg.HANDSHAPE8.id);
                 return fragment;
 

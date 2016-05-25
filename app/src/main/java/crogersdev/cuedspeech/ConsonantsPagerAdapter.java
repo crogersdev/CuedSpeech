@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.text.Html;
 import android.util.Log;
 
 public class ConsonantsPagerAdapter extends FragmentStatePagerAdapter {
@@ -31,7 +32,7 @@ public class ConsonantsPagerAdapter extends FragmentStatePagerAdapter {
             case 0:
                 Log.d("ConsonantsPagerAdapter", "position = 1");
                 args.putString("label", "Handshape 1");
-                args.putString("phonemes", "/ee/, /ur/");
+                args.putString("phonemes", "/d/, /p/, /zh/");
                 mSharedPrefs.getString("mnemonic", mMnemonicStr);
                 if (mMnemonicStr != null) {
                     Log.d("crogersdev", "putting mMnemonicStr: " + mMnemonicStr);
@@ -39,7 +40,8 @@ public class ConsonantsPagerAdapter extends FragmentStatePagerAdapter {
                 }
                 else {
                     Log.d("crogersdev", "putting in hard coded string");
-                    args.putString("mnemonic", "deep treasure");
+                    String text = "<font color=red><b>d</b></font>ee<font color=red><b>p</b></font> trea<font color=red><b>su</b></font>re";
+                    args.putString("mnemonic", text);
                 }
                 args.putInt("cue_image", CueImg.HANDSHAPE1.id);
                 return fragment;
@@ -53,7 +55,8 @@ public class ConsonantsPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("phonemes", mMnemonicStr);
                 }
                 else {
-                    args.putString("mnemonic", "the caves");
+                    String text = "<font color=red><b>t</b></font>he <font color=red><b>c</b></font>a<font color=red><b>v</b></font>e<font color=red><b>z</b></font>";
+                    args.putString("mnemonic", text);
                 }
                 args.putInt("cue_image", CueImg.HANDSHAPE2.id);
                 return fragment;
@@ -67,7 +70,8 @@ public class ConsonantsPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("phonemes", mMnemonicStr);
                 }
                 else {
-                    args.putString("mnemonic", "sea horse");
+                    String text = "<font color=red><b>s</b></font>ea ho<font color=red><b>rs</b></font>e";
+                    args.putString("mnemonic", text);
                 }
                 args.putInt("cue_image", CueImg.HANDSHAPE3.id);
                 return fragment;
@@ -81,7 +85,8 @@ public class ConsonantsPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("phonemes", mMnemonicStr);
                 }
                 else {
-                    args.putString("mnemonic", "white bone");
+                    String text = "<font color=red><b>wh</b></font>ite <font color=red><b>b</b></font>o<font color=red><b>n</b></font>e";
+                    args.putString("mnemonic", text);
                 }
                 args.putInt("cue_image", CueImg.HANDSHAPE4.id);
                 return fragment;
@@ -95,7 +100,8 @@ public class ConsonantsPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("phonemes", mMnemonicStr);
                 }
                 else {
-                    args.putString("mnemonic", "my taffy");
+                    String text = "<font color=red><b>m</b></font>y <font color=red><b>t</b></font>a<font color=red><b>ff</b></font>y";
+                    args.putString("mnemonic", text);
                 }
                 args.putInt("cue_image", CueImg.HANDSHAPE5.id);
                 return fragment;
@@ -109,7 +115,8 @@ public class ConsonantsPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("phonemes", mMnemonicStr);
                 }
                 else {
-                    args.putString("mnemonic", "wet shell");
+                    String text = "<font color=red><b>w</b></font>et <font color=red><b>sh</b></font>e<font color=red><b>ll</b></font>";
+                    args.putString("mnemonic", text);
                 }
                 args.putInt("cue_image", CueImg.HANDSHAPE6.id);
                 return fragment;
@@ -123,7 +130,8 @@ public class ConsonantsPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("phonemes", mMnemonicStr);
                 }
                 else {
-                    args.putString("mnemonic", "thin jogger");
+                    String text = "<font color=red><b>th</b></font>in <font color=red><b>j</b></font>o<font color=red><b>gg</b></font>er";
+                    args.putString("mnemonic", text);
                 }
                 args.putInt("cue_image", CueImg.HANDSHAPE7.id);
                 return fragment;
@@ -137,7 +145,8 @@ public class ConsonantsPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("phonemes", mMnemonicStr);
                 }
                 else {
-                    args.putString("mnemonic", "young child");
+                    String text = "<font color=red><b>y</b></font>ou<font color=red><b>ng</b></font> <font color=red><b>ch</b></font>ild";
+                    args.putString("mnemonic", text);
                 }
                 args.putInt("cue_image", CueImg.HANDSHAPE8.id);
                 return fragment;

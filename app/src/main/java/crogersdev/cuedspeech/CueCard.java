@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
+import android.text.Html;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -34,7 +35,7 @@ public class CueCard extends Fragment {
         ((TextView)rootView.findViewById(R.id.cuecard_phonemes)).setText(args.getString("phonemes"));
 
         EditText mnemonicField = (EditText)rootView.findViewById(R.id.cuecard_mnemonic);
-        mnemonicField.setText(args.getString("mnemonic"));
+        mnemonicField.setText(Html.fromHtml(args.getString("mnemonic")));
 
         Log.d("CueCard", "cue_image is: " + args.getInt("cue_image"));
 

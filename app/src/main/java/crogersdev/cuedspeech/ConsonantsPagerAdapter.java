@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.text.Html;
 import android.util.Log;
 
@@ -13,11 +14,12 @@ public class ConsonantsPagerAdapter extends FragmentStatePagerAdapter {
     protected Context mContext;
     protected SharedPreferences mSharedPrefs;
     protected String mMnemonicStr;
+    protected ViewPager mVp;
 
-    public ConsonantsPagerAdapter(FragmentManager fm, Context cxt) {
+    public ConsonantsPagerAdapter(FragmentManager fm, Context cxt, ViewPager vp) {
         super(fm);
         mContext = cxt;
-
+        mVp = vp;
         mSharedPrefs = mContext.getSharedPreferences("MnemonicPrefs", Context.MODE_PRIVATE);
     }
 
@@ -28,11 +30,14 @@ public class ConsonantsPagerAdapter extends FragmentStatePagerAdapter {
         args.putInt("page_position", pos + 1);
         fragment.setArguments(args);
 
+        args.putInt("position", pos);
+
         switch (pos) {
             case 0:
                 Log.d("ConsonantsPagerAdapter", "position = 1");
                 args.putString("label", "Handshape 1");
                 args.putString("phonemes", "/d/, /p/, /zh/");
+
                 mSharedPrefs.getString("mnemonic", mMnemonicStr);
                 if (mMnemonicStr != null) {
                     Log.d("crogersdev", "putting mMnemonicStr: " + mMnemonicStr);

@@ -38,7 +38,8 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("mnemonic", mMnemonicStr);
                 }
                 else {
-                    args.putString("mnemonic", "leisure");
+                    String text = "l<font color=red><b>ei</b></font>su<font color=red><b>re</b></font>";
+                    args.putString("mnemonic", text);
                 }
 
                 args.putInt("cue_image", CueImg.VOWEL_MOUTH.id);
@@ -54,7 +55,8 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("mnemonic", mMnemonicStr);
                 }
                 else {
-                    args.putString("mnemonic", "tall blue tent");
+                    String text = "t<font color=red><b>a</b></font>ll bl<font color=red><b>ue</b></font> t<font color=red><b>e</b></font>nt";
+                    args.putString("mnemonic", text);
                 }
 
                 args.putInt("cue_image", CueImg.VOWEL_CHIN.id);
@@ -70,7 +72,8 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("mnemonic", mMnemonicStr);
                 }
                 else {
-                    args.putString("mnemonic", "look big crabs");
+                    String text = "l<font color=red><b>oo</b></font>k b<font color=red><b>i</b></font>g cr<font color=red><b>a</b></font>bs";
+                    args.putString("mnemonic", text);
                 }
 
                 args.putInt("cue_image", CueImg.VOWEL_THROAT.id);
@@ -101,7 +104,8 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("mnemonic", mMnemonicStr);
                 }
                 else {
-                    args.putString("mnemonic", "boat dock");
+                    String text = "b<font color=red><b>oa</b></font>t d<font color=red><b>o</b></font>ck";
+                    args.putString("mnemonic", text);
                 }
 
                 args.putInt("cue_image", CueImg.VOWEL_SIDE_FWD.id);
@@ -116,7 +120,8 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("mnemonic", mMnemonicStr);
                 }
                 else {
-                    args.putString("mnemonic", "sun");
+                    String text = "s<font color=red><b>u</b></font>n";
+                    args.putString("mnemonic", text);
                 }
 
                 args.putInt("cue_image", CueImg.VOWEL_SIDE_DOWN.id);
@@ -131,7 +136,8 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("mnemonic", mMnemonicStr);
                 }
                 else {
-                    args.putString("mnemonic", "moist snails");
+                    String text = "m<font color=red><b>oi</b></font>st sn<font color=red><b>ai</b></font>ls";
+                    args.putString("mnemonic", text);
                 }
 
                 args.putInt("cue_image", CueImg.VOWEL_CHIN_THROAT.id);
@@ -146,7 +152,8 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("mnemonic", mMnemonicStr);
                 }
                 else {
-                    args.putString("mnemonic", "light house");
+                    String text = "l<font color=red><b>i</b></font>ght h<font color=red><b>ou</b></font>se";
+                    args.putString("mnemonic", text);
                 }
 
                 args.putInt("cue_image", CueImg.VOWEL_SIDE_THROAT.id);

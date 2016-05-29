@@ -10,6 +10,9 @@ import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
 
+    ViewPager mViewPager;
+    int mPrevTab = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,21 +26,23 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("Vowels"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        final ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
-        final ConsonantsPagerAdapter consonantsPagerAdapter = new ConsonantsPagerAdapter(getSupportFragmentManager(), this, viewPager);
-        viewPager.setAdapter(consonantsPagerAdapter);
+        mViewPager = (ViewPager) findViewById(R.id.pager);
+        final ConsonantsPagerAdapter consonantsPagerAdapter = new ConsonantsPagerAdapter(getSupportFragmentManager(), this, mViewPager);
+        mViewPager.setAdapter(consonantsPagerAdapter);
         final VowelPagerAdapter vowelPagerAdapter = new VowelPagerAdapter(getSupportFragmentManager(), this);
 
         tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 switch (tab.getPosition()) {
+
                     case 0:
-                        viewPager.setAdapter(consonantsPagerAdapter);
+                        int oldPos =  mViewPager.getCurrentItem();
+                        mViewPager.setAdapter(consonantsPagerAdapter);
                         Log.d("crogersdev:MainActivity", "tab 0 selected, setting pager adapter to consonants");
                         break;
                     case 1:
-                        viewPager.setAdapter(vowelPagerAdapter);
+                        mViewPager.setAdapter(vowelPagerAdapter);
                         Log.d("crogersdev:MainActivity", "tab 1 selected, setting pager adapter to vowels");
                         break;
                 }
@@ -53,5 +58,16 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
+        if (savedInstanceState != null) {
+            mViewPager.setCurrentItem(savedInstanceState.getInt("currentItem", 0));
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        savedInstanceState.putInt("currentItem", mViewPager.getCurrentItem());
+
+        super.onSaveInstanceState(savedInstanceState);
     }
 }

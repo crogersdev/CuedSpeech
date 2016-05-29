@@ -56,7 +56,6 @@ public class CueCard extends Fragment {
 
         SharedPreferences.Editor prefsEditor = mSharedPreferences.edit();
         prefsEditor.putString("mnemonic_" + Integer.toString(R.id.cue_image), mMnemonicStr);
-        prefsEditor.putString("currentPage", )
         prefsEditor.commit();
 
         return rootView;

@@ -34,7 +34,7 @@ public class CueCard extends Fragment {
         ((TextView)rootView.findViewById(R.id.cuecard_label)).setText(args.getString("label"));
         ((TextView)rootView.findViewById(R.id.cuecard_phonemes)).setText(args.getString("phonemes"));
 
-        EditText mnemonicField = (EditText)rootView.findViewById(R.id.cuecard_mnemonic);
+        TextView mnemonicField = (TextView)rootView.findViewById(R.id.cuecard_mnemonic);
         mnemonicField.setText(Html.fromHtml(args.getString("mnemonic")));
 
         Log.d("CueCard", "cue_image is: " + args.getInt("cue_image"));

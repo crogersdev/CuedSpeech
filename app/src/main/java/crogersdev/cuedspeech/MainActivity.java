@@ -10,8 +10,9 @@ import android.util.Log;
 
 public class MainActivity extends AppCompatActivity {
 
+    int mConsPrevPos = 0;
+    int mVowelPrevPos = 0;
     ViewPager mViewPager;
-    int mPrevTab = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,14 +36,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 switch (tab.getPosition()) {
-
                     case 0:
-                        int oldPos =  mViewPager.getCurrentItem();
+                        mVowelPrevPos = mViewPager.getCurrentItem();
                         mViewPager.setAdapter(consonantsPagerAdapter);
+                        mViewPager.setCurrentItem(mConsPrevPos);
                         Log.d("crogersdev:MainActivity", "tab 0 selected, setting pager adapter to consonants");
                         break;
                     case 1:
+                        mConsPrevPos = mViewPager.getCurrentItem();
                         mViewPager.setAdapter(vowelPagerAdapter);
+                        mViewPager.setCurrentItem(mVowelPrevPos);
                         Log.d("crogersdev:MainActivity", "tab 1 selected, setting pager adapter to vowels");
                         break;
                 }

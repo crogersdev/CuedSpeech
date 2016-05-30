@@ -38,6 +38,7 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("mnemonic", mMnemonicStr);
                 }
                 else {
+                    // hello kyle
                     String text = "l<font color=red><b>ei</b></font>su<font color=red><b>re</b></font>";
                     args.putString("mnemonic", text);
                 }

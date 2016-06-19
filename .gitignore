@@ -1,0 +1,14 @@
+# Directories #
+###############
+.gradle/
+.idea/
+build/intermediates/
+
+# .iml Files #
+##############
+app/*.iml
+*.iml
+
+# Local Properties #
+####################
+local.properties

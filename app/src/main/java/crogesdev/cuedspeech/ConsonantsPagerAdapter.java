@@ -60,7 +60,7 @@ public class ConsonantsPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("phonemes", mMnemonicStr);
                 }
                 else {
-                    String text = "<font color=red><b>t</b></font>he <font color=red><b>c</b></font>a<font color=red><b>v</b></font>e<font color=red><b>z</b></font>";
+                    String text = "<font color=red><b>t</b></font>he <font color=red><b>c</b></font>a<font color=red><b>v</b></font>e<font color=red><b>s</b></font>";
                     args.putString("mnemonic", text);
                 }
                 args.putInt("cue_image", CueImg.HANDSHAPE2.id);

@@ -25,3 +25,12 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+#crogers additions
+local.properties
+*.orig
+*_BACKUP*
+*_BASE*
+*_REMOTE*
+*_LOCAL*
+build/

@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         mViewPager.setAdapter(consonantsPagerAdapter);
         final VowelPagerAdapter vowelPagerAdapter = new VowelPagerAdapter(getSupportFragmentManager(), this);
 
-        tabLayout.setOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+        tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
             public void onTabSelected(TabLayout.Tab tab) {
                 switch (tab.getPosition()) {

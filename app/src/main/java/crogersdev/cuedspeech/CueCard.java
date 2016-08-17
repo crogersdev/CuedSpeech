@@ -39,7 +39,9 @@ public class CueCard extends Fragment {
 
         Log.d("CueCard", "cue_image is: " + args.getInt("cue_image"));
 
-        rootView.findViewById(R.id.cue_image).setBackgroundResource(args.getInt("cue_image"));
+        //rootView.findViewById(R.id.cue_image).setBackgroundResource(args.getInt("cue_image"));
+        ImageView cueImg = (ImageView)rootView.findViewById(R.id.cue_image);
+        cueImg.setImageResource(args.getInt("cue_image"));
 
         mnemonicField.addTextChangedListener(new TextWatcher() {
             @Override

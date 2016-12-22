@@ -39,7 +39,9 @@ public class CueCard extends Fragment {
 
         Log.d("CueCard", "cue_image is: " + args.getInt("cue_image"));
 
-        rootView.findViewById(R.id.cue_image).setBackgroundResource(args.getInt("cue_image"));
+        //rootView.findViewById(R.id.cue_image).setBackgroundResource(args.getInt("cue_image"));
+        ImageView cueImg = (ImageView)rootView.findViewById(R.id.cue_image);
+        cueImg.setImageResource(args.getInt("cue_image"));
 
         mnemonicField.addTextChangedListener(new TextWatcher() {
             @Override
@@ -56,6 +58,7 @@ public class CueCard extends Fragment {
 
         SharedPreferences.Editor prefsEditor = mSharedPreferences.edit();
         prefsEditor.putString("mnemonic_" + Integer.toString(R.id.cue_image), mMnemonicStr);
+        //prefsEditor.putString("currentPage", )
         prefsEditor.commit();
 
         return rootView;

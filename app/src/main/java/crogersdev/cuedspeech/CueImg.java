@@ -7,14 +7,22 @@ import android.content.res.Resources;
  */
 public enum CueImg {
 
-    HANDSHAPE1 (R.drawable.handshape_1_icon),
+    /*HANDSHAPE1 (R.drawable.handshape_1_icon),
     HANDSHAPE2 (R.drawable.handshape_2_icon),
     HANDSHAPE3 (R.drawable.handshape_3_icon),
     HANDSHAPE4 (R.drawable.handshape_4_icon),
     HANDSHAPE5 (R.drawable.handshape_5_icon),
     HANDSHAPE6 (R.drawable.handshape_6_icon),
     HANDSHAPE7 (R.drawable.handshape_7_icon),
-    HANDSHAPE8 (R.drawable.handshape_8_icon),
+    HANDSHAPE8 (R.drawable.handshape_8_icon),*/
+    HANDSHAPE1 (R.drawable.handshape1),
+    HANDSHAPE2 (R.drawable.handshape2),
+    HANDSHAPE3 (R.drawable.handshape3),
+    HANDSHAPE4 (R.drawable.handshape4),
+    HANDSHAPE5 (R.drawable.handshape5),
+    HANDSHAPE6 (R.drawable.handshape6),
+    HANDSHAPE7 (R.drawable.handshape7),
+    HANDSHAPE8 (R.drawable.handshape8),
     VOWEL_MOUTH (R.drawable.vowel_mouth_icon),
     VOWEL_CHIN (R.drawable.vowel_chin_icon),
     VOWEL_THROAT (R.drawable.vowel_throat_icon),

@@ -1,15 +1,8 @@
-# Built application files
-build/
-
-# Local configuration file (sdk path, etc)
-local.properties
-
+*.iml
 # Gradle generated files
 .gradle/
-
 # Signing files
 .signing/
-
 # User-specific configurations
 .idea/libraries/
 .idea/workspace.xml
@@ -32,3 +25,13 @@ local.properties
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+#crogers additions
+local.properties
+*.orig
+*_BACKUP*
+*_BASE*
+*_REMOTE*
+*_LOCAL*
+build/
+*swp

@@ -23,6 +23,8 @@ public enum CueImg {
     HANDSHAPE6 (R.drawable.handshape6),
     HANDSHAPE7 (R.drawable.handshape7),
     HANDSHAPE8 (R.drawable.handshape8),
+    VOWEL (R.drawable.face),
+
     VOWEL_MOUTH (R.drawable.vowel_mouth_icon),
     VOWEL_CHIN (R.drawable.vowel_chin_icon),
     VOWEL_THROAT (R.drawable.vowel_throat_icon),

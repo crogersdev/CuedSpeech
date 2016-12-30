@@ -54,6 +54,12 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true">
         </ImageView>
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/dot_view"
+            android:layout_alignBottom="@+id/cue_img_holder"/>
     </android.support.v7.widget.CardView>
+
 
 </RelativeLayout>

@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.util.Log;
+import android.view.LayoutInflater;
 
 public class VowelPagerAdapter extends FragmentStatePagerAdapter {
     protected Context mContext;
@@ -38,12 +39,13 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("mnemonic", mMnemonicStr);
                 }
                 else {
-                    // hello kyle
                     String text = "l<font color=red><b>ei</b></font>su<font color=red><b>re</b></font>";
                     args.putString("mnemonic", text);
                 }
 
-                args.putInt("cue_image", CueImg.VOWEL_MOUTH.id);
+                //args.putInt("cue_image", CueImg.VOWEL_MOUTH.id);
+                args.putInt("cue_image", CueImg.VOWEL.id);
+                args.putString("animate_dot", "leisure");
                 return vowelCueCard;
 
             case 1:
@@ -161,6 +163,7 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                 return vowelCueCard;
 
         }
+        Log.d("VowelPagerAdapter", " about to return, shouldn't see this, right?");
         return null;
     }
 

@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
                         mConsPrevPos = mViewPager.getCurrentItem();
                         mViewPager.setAdapter(vowelPagerAdapter);
                         mViewPager.setCurrentItem(mVowelPrevPos);
+
                         Log.d("crogersdev:MainActivity", "tab 1 selected, setting pager adapter to vowels");
                         break;
                 }

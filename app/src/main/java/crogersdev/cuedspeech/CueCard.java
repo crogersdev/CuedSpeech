@@ -2,6 +2,10 @@ package crogersdev.cuedspeech;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
@@ -12,9 +16,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import android.graphics.Rect;
 
 /**
  * Created by chris on 10/24/15.
@@ -23,10 +28,16 @@ public class CueCard extends Fragment {
 
     private SharedPreferences mSharedPreferences;
     private String mMnemonicStr;
+    LayoutInflater mLayoutInflater = null;
+    ViewGroup mContainer = null;
+
+    ImageView mCueImage = null;
 
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.consonants_tab_view, container, false);
+        mLayoutInflater = inflater;
+        mContainer = container;
+        View rootView = inflater.inflate(R.layout.cue_card, container, false);
 
         mSharedPreferences = this.getContext().getSharedPreferences("MnemonicPrefs", Context.MODE_PRIVATE);
 
@@ -41,7 +52,17 @@ public class CueCard extends Fragment {
 
         //rootView.findViewById(R.id.cue_image).setBackgroundResource(args.getInt("cue_image"));
         ImageView cueImg = (ImageView)rootView.findViewById(R.id.cue_image);
+        ImageView dotImg = (ImageView)rootView.findViewById(R.id.dot_view);
+        mCueImage = cueImg;
         cueImg.setImageResource(args.getInt("cue_image"));
+
+        if (args.getString("animate_dot") == "leisure") {
+            View dotv = new Dot(getActivity(), Color.BLUE); // getActivity used because we're a fragment and we need context
+            Bitmap bitmap = Bitmap.createBitmap(1000/*width*/, 1000/*height*/, Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(bitmap);
+            dotv.draw(canvas);
+            dotImg.setImageBitmap(bitmap);
+        }
 
         mnemonicField.addTextChangedListener(new TextWatcher() {
             @Override
@@ -68,9 +89,11 @@ public class CueCard extends Fragment {
         public AspectRatioImageView(Context cxt) {
             super(cxt);
         }
+
         public AspectRatioImageView(Context cxt, AttributeSet attrs) {
             super(cxt, attrs);
         }
+
         public AspectRatioImageView(Context cxt, AttributeSet attrs, int defStyle) {
             super(cxt, attrs, defStyle);
         }
@@ -81,6 +104,22 @@ public class CueCard extends Fragment {
             int height = width * getDrawable().getIntrinsicHeight() / getDrawable().getIntrinsicWidth();
             setMeasuredDimension(width, height);
         }
+    }
 
+    private class Dot extends View {
+        Paint mPaint = new Paint();
+        int mColor = Color.RED;
+
+        public Dot(Context context, int c) {
+            super(context);
+            mColor = c;
+        }
+
+        @Override
+        public void onDraw(Canvas canvas) {
+            mPaint.setColor(mColor);
+            //paint.setAlpha(125);
+            canvas.drawCircle(15, 15, 15, mPaint);
+        }
     }
 }

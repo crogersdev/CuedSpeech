@@ -43,7 +43,6 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("mnemonic", text);
                 }
 
-                //args.putInt("cue_image", CueImg.VOWEL_MOUTH.id);
                 args.putInt("cue_image", CueImg.VOWEL.id);
                 args.putString("animate_dot", "leisure");
                 return vowelCueCard;
@@ -62,7 +61,8 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("mnemonic", text);
                 }
 
-                args.putInt("cue_image", CueImg.VOWEL_CHIN.id);
+                args.putInt("cue_image", CueImg.VOWEL.id);
+                args.putString("animate_dot", "tall blue tent");
                 return vowelCueCard;
 
             case 2:
@@ -79,7 +79,8 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("mnemonic", text);
                 }
 
-                args.putInt("cue_image", CueImg.VOWEL_THROAT.id);
+                //args.putInt("cue_image", CueImg.VOWEL_THROAT.id);
+                args.putInt("cue_image", CueImg.VOWEL.id);
                 return vowelCueCard;
 
             case 3:
@@ -95,7 +96,8 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("mnemonic", "");
                 }
 
-                args.putInt("cue_image", CueImg.VOWEL_SIDE.id);
+                //args.putInt("cue_image", CueImg.VOWEL_SIDE.id);
+                args.putInt("cue_image", CueImg.VOWEL.id);
                 return vowelCueCard;
             case 4:
                 Log.d("VowelPagerAdapter", "position = 5");
@@ -111,7 +113,8 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("mnemonic", text);
                 }
 
-                args.putInt("cue_image", CueImg.VOWEL_SIDE_FWD.id);
+                //args.putInt("cue_image", CueImg.VOWEL_SIDE_FWD.id);
+                args.putInt("cue_image", CueImg.VOWEL.id);
                 return vowelCueCard;
             case 5:
                 Log.d("VowelPagerAdapter", "position = 6");
@@ -127,7 +130,8 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("mnemonic", text);
                 }
 
-                args.putInt("cue_image", CueImg.VOWEL_SIDE_DOWN.id);
+                //args.putInt("cue_image", CueImg.VOWEL_SIDE_DOWN.id);
+                args.putInt("cue_image", CueImg.VOWEL.id);
                 return vowelCueCard;
             case 6:
                 Log.d("VowelPagerAdapter", "position = 7");
@@ -143,7 +147,8 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("mnemonic", text);
                 }
 
-                args.putInt("cue_image", CueImg.VOWEL_CHIN_THROAT.id);
+                //args.putInt("cue_image", CueImg.VOWEL_CHIN_THROAT.id);
+                args.putInt("cue_image", CueImg.VOWEL.id);
                 return vowelCueCard;
             case 7:
                 Log.d("VowelPagerAdapter", "position = 8");
@@ -159,7 +164,8 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
                     args.putString("mnemonic", text);
                 }
 
-                args.putInt("cue_image", CueImg.VOWEL_SIDE_THROAT.id);
+                //args.putInt("cue_image", CueImg.VOWEL_SIDE_THROAT.id);
+                args.putInt("cue_image", CueImg.VOWEL.id);
                 return vowelCueCard;
 
         }

@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
@@ -50,19 +51,45 @@ public class CueCard extends Fragment {
 
         Log.d("CueCard", "cue_image is: " + args.getInt("cue_image"));
 
-        //rootView.findViewById(R.id.cue_image).setBackgroundResource(args.getInt("cue_image"));
         ImageView cueImg = (ImageView)rootView.findViewById(R.id.cue_image);
         ImageView dotImg = (ImageView)rootView.findViewById(R.id.dot_view);
         mCueImage = cueImg;
         cueImg.setImageResource(args.getInt("cue_image"));
 
+        switch(args.getString("animate_dot"))
+        {
+            case "leisure":
+                break;
+            case "tall blue tent":
+                break;
+
+
+        } // end switch
+
         if (args.getString("animate_dot") == "leisure") {
-            View dotv = new Dot(getActivity(), Color.BLUE); // getActivity used because we're a fragment and we need context
-            Bitmap bitmap = Bitmap.createBitmap(1000/*width*/, 1000/*height*/, Bitmap.Config.ARGB_8888);
+            View dotv = new Dot(getActivity(), Color.RED, 0, 0); // getActivity used because we're a fragment and we need context
+            Bitmap bitmap = Bitmap.createBitmap(1120, 784, Bitmap.Config.ARGB_8888);
             Canvas canvas = new Canvas(bitmap);
             dotv.draw(canvas);
             dotImg.setImageBitmap(bitmap);
+            /*
+            BitmapDrawable b = ((BitmapDrawable)cueImg.getDrawable());
+            Bitmap bmp = b.getBitmap();
+            Integer w = bmp.getWidth();
+            Integer h = bmp.getHeight();
+            Log.d("CueCard", "width x height of face = " + w.toString() + " x " + h.toString());
+            */
+        } else if (args.getString("animate_dot") == "tall blue tent") {
+            View dotv = new Dot(getActivity(), Color.RED, 50, 0); // getActivity used because we're a fragment and we need context
+            Bitmap bitmap = Bitmap.createBitmap(1120, 784, Bitmap.Config.ARGB_8888);
+            Canvas canvas = new Canvas(bitmap);
+            dotv.draw(canvas);
+            dotImg.setImageBitmap(bitmap);
+
+        } else {
+
         }
+
 
         mnemonicField.addTextChangedListener(new TextWatcher() {
             @Override
@@ -109,17 +136,21 @@ public class CueCard extends Fragment {
     private class Dot extends View {
         Paint mPaint = new Paint();
         int mColor = Color.RED;
+        int mX = 0;
+        int mY = 0;
 
-        public Dot(Context context, int c) {
+        public Dot(Context context, int c, int x, int y) {
             super(context);
             mColor = c;
+            mX = x;
+            mY = y;
         }
 
         @Override
         public void onDraw(Canvas canvas) {
             mPaint.setColor(mColor);
             //paint.setAlpha(125);
-            canvas.drawCircle(15, 15, 15, mPaint);
+            canvas.drawCircle(mX, mY, 20, mPaint);
         }
     }
 }

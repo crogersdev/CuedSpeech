@@ -32,8 +32,6 @@ public class CueCard extends Fragment {
     LayoutInflater mLayoutInflater = null;
     ViewGroup mContainer = null;
 
-    ImageView mCueImage = null;
-
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
         mLayoutInflater = inflater;
@@ -53,43 +51,67 @@ public class CueCard extends Fragment {
 
         ImageView cueImg = (ImageView)rootView.findViewById(R.id.cue_image);
         ImageView dotImg = (ImageView)rootView.findViewById(R.id.dot_view);
-        mCueImage = cueImg;
         cueImg.setImageResource(args.getInt("cue_image"));
 
-        switch(args.getString("animate_dot"))
-        {
-            case "leisure":
-                break;
-            case "tall blue tent":
-                break;
-
-
-        } // end switch
-
-        if (args.getString("animate_dot") == "leisure") {
-            View dotv = new Dot(getActivity(), Color.RED, 0, 0); // getActivity used because we're a fragment and we need context
-            Bitmap bitmap = Bitmap.createBitmap(1120, 784, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(bitmap);
-            dotv.draw(canvas);
-            dotImg.setImageBitmap(bitmap);
-            /*
-            BitmapDrawable b = ((BitmapDrawable)cueImg.getDrawable());
-            Bitmap bmp = b.getBitmap();
-            Integer w = bmp.getWidth();
-            Integer h = bmp.getHeight();
-            Log.d("CueCard", "width x height of face = " + w.toString() + " x " + h.toString());
-            */
-        } else if (args.getString("animate_dot") == "tall blue tent") {
-            View dotv = new Dot(getActivity(), Color.RED, 50, 0); // getActivity used because we're a fragment and we need context
-            Bitmap bitmap = Bitmap.createBitmap(1120, 784, Bitmap.Config.ARGB_8888);
-            Canvas canvas = new Canvas(bitmap);
-            dotv.draw(canvas);
-            dotImg.setImageBitmap(bitmap);
-
-        } else {
-
+        Bitmap bitmap = null;
+        Canvas canvas = null;
+        View dotv = null;
+        if (args.getString("animate_dot") != null) {
+            bitmap = Bitmap.createBitmap(1120, 991, Bitmap.Config.ARGB_8888); // dimensions hardcoded to be the size of the image (bleh!  feels like an ugly hack)
+            canvas = new Canvas(bitmap);
         }
 
+        if (args.getString("animate_dot") != null) {
+            switch (args.getString("animate_dot")) {
+                case "leisure":
+                    /*Bitmap b = ((BitmapDrawable)cueImg.getDrawable()).getBitmap();
+                    Log.d("CueCard", "width: " + b.getWidth());
+                    Log.d("CueCard", "height: " + b.getHeight());
+                    leaving this here for legacy purposes...*/
+
+                    dotv = new Dot(getActivity(), Color.RED, 350, 465); // getActivity used because we're a fragment and we need context
+                    dotv.draw(canvas);
+                    dotImg.setImageBitmap(bitmap);
+                    break;
+                case "tall blue tent":
+                    dotv = new Dot(getActivity(), Color.RED, 570, 680);
+                    dotv.draw(canvas);
+                    dotImg.setImageBitmap(bitmap);
+                    break;
+                case "look big crabs":
+                    dotv = new Dot(getActivity(), Color.RED, 570, 900);
+                    dotv.draw(canvas);
+                    dotImg.setImageBitmap(bitmap);
+                    break;
+                case "consonant alone":
+                    dotv = new Dot(getActivity(), Color.RED, 50, 475); // side
+                    dotv.draw(canvas);
+                    dotImg.setImageBitmap(bitmap);
+                    break;
+                case "boat dock":
+                    dotv = new Dot(getActivity(), Color.RED, 50, 475); // side forward
+                    dotv.draw(canvas);
+                    dotImg.setImageBitmap(bitmap);
+                    break;
+                case "sun":
+                    dotv = new Dot(getActivity(), Color.RED, 50, 475); // side down
+                    dotv.draw(canvas);
+                    dotImg.setImageBitmap(bitmap);
+                    break;
+                case "moist snails":
+                    dotv = new Dot(getActivity(), Color.RED, 570, 680); // chin to throat
+                    dotv.draw(canvas);
+                    dotImg.setImageBitmap(bitmap);
+                    break;
+                case "light house":
+                    dotv = new Dot(getActivity(), Color.RED, 50, 475); // side to throat
+                    dotv.draw(canvas);
+                    dotImg.setImageBitmap(bitmap);
+                    break;
+                default:
+                    break;
+            } // end switch
+        }
 
         mnemonicField.addTextChangedListener(new TextWatcher() {
             @Override

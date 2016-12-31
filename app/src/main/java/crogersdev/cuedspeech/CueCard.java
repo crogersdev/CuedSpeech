@@ -13,10 +13,17 @@ import android.text.Editable;
 import android.text.Html;
 import android.text.TextWatcher;
 import android.util.AttributeSet;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.AccelerateDecelerateInterpolator;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.AnimationUtils;
+import android.view.animation.Interpolator;
+import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -62,13 +69,13 @@ public class CueCard extends Fragment {
         }
 
         if (args.getString("animate_dot") != null) {
+            AnimationSet animation = null;
             switch (args.getString("animate_dot")) {
                 case "leisure":
                     /*Bitmap b = ((BitmapDrawable)cueImg.getDrawable()).getBitmap();
                     Log.d("CueCard", "width: " + b.getWidth());
                     Log.d("CueCard", "height: " + b.getHeight());
                     leaving this here for legacy purposes...*/
-
                     dotv = new Dot(getActivity(), Color.RED, 350, 465); // getActivity used because we're a fragment and we need context
                     break;
                 case "tall blue tent":
@@ -81,12 +88,16 @@ public class CueCard extends Fragment {
                     dotv = new Dot(getActivity(), Color.RED, 50, 475); // side
                     break;
                 case "boat dock":
+                    animation = VowelAnimations.setSideForwardAnimation();
                     dotv = new Dot(getActivity(), Color.RED, 50, 475); // side forward
                     break;
                 case "sun":
+                    //animation = AnimationUtils.loadAnimation(getActivity(), R.anim.side_down);
+                    animation = VowelAnimations.setSideDownAnimation();
                     dotv = new Dot(getActivity(), Color.RED, 50, 475); // side down
                     break;
                 case "moist snails":
+                    animation = VowelAnimations.setChinToThroatAnimation();
                     dotv = new Dot(getActivity(), Color.RED, 570, 680); // chin to throat
                     break;
                 case "light house":
@@ -98,6 +109,9 @@ public class CueCard extends Fragment {
             dotImg.setVisibility(View.VISIBLE);
             dotv.draw(canvas);
             dotImg.setImageBitmap(bitmap);
+            if (animation != null) {
+                dotImg.startAnimation(animation);
+            }
         }
 
         mnemonicField.addTextChangedListener(new TextWatcher() {
@@ -119,7 +133,7 @@ public class CueCard extends Fragment {
         prefsEditor.commit();
 
         return rootView;
-    }
+    } // end onCreateView
 
     public class AspectRatioImageView extends ImageView {
         public AspectRatioImageView(Context cxt) {
@@ -160,6 +174,10 @@ public class CueCard extends Fragment {
             mPaint.setColor(mColor);
             //paint.setAlpha(125);
             canvas.drawCircle(mX, mY, 20, mPaint);
+        }
+
+        public void zoomAnimate() {
+
         }
     }
 }

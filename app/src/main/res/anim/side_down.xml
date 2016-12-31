@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 2016 Dec 31 - Crogers - I read that the set tag is buggy, so I am leaving this here for
+                             legacy purposes, to remember cool things.  But I won't be using it.
+                             Replacing it with the VowelAnimations class. -->
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:interpolator="@android:anim/accelerate_decelerate_interpolator"
+    android:duration="5000">
+    <translate
+        android:fromXDelta="0"
+        android:fromYDelta="0"
+        android:toXDelta="0"
+        android:toYDelta="200"
+        android:repeatCount="infinite"
+        />
+    <scale
+        android:fromXScale="0.0"
+        android:fromYScale="0.0"
+        android:toXScale="1.0"
+        android:toYScale="1.0"
+        android:repeatCount="infinite"
+    />
+</set>

@@ -70,47 +70,34 @@ public class CueCard extends Fragment {
                     leaving this here for legacy purposes...*/
 
                     dotv = new Dot(getActivity(), Color.RED, 350, 465); // getActivity used because we're a fragment and we need context
-                    dotv.draw(canvas);
-                    dotImg.setImageBitmap(bitmap);
                     break;
                 case "tall blue tent":
                     dotv = new Dot(getActivity(), Color.RED, 570, 680);
-                    dotv.draw(canvas);
-                    dotImg.setImageBitmap(bitmap);
                     break;
                 case "look big crabs":
                     dotv = new Dot(getActivity(), Color.RED, 570, 900);
-                    dotv.draw(canvas);
-                    dotImg.setImageBitmap(bitmap);
                     break;
                 case "consonant alone":
                     dotv = new Dot(getActivity(), Color.RED, 50, 475); // side
-                    dotv.draw(canvas);
-                    dotImg.setImageBitmap(bitmap);
                     break;
                 case "boat dock":
                     dotv = new Dot(getActivity(), Color.RED, 50, 475); // side forward
-                    dotv.draw(canvas);
-                    dotImg.setImageBitmap(bitmap);
                     break;
                 case "sun":
                     dotv = new Dot(getActivity(), Color.RED, 50, 475); // side down
-                    dotv.draw(canvas);
-                    dotImg.setImageBitmap(bitmap);
                     break;
                 case "moist snails":
                     dotv = new Dot(getActivity(), Color.RED, 570, 680); // chin to throat
-                    dotv.draw(canvas);
-                    dotImg.setImageBitmap(bitmap);
                     break;
                 case "light house":
                     dotv = new Dot(getActivity(), Color.RED, 50, 475); // side to throat
-                    dotv.draw(canvas);
-                    dotImg.setImageBitmap(bitmap);
                     break;
                 default:
                     break;
             } // end switch
+            dotImg.setVisibility(View.VISIBLE);
+            dotv.draw(canvas);
+            dotImg.setImageBitmap(bitmap);
         }
 
         mnemonicField.addTextChangedListener(new TextWatcher() {

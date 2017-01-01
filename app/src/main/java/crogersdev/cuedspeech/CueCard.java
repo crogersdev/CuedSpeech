@@ -101,6 +101,7 @@ public class CueCard extends Fragment {
                     dotv = new Dot(getActivity(), Color.RED, 570, 680); // chin to throat
                     break;
                 case "light house":
+                    animation = VowelAnimations.setSideToThroatAnimation();
                     dotv = new Dot(getActivity(), Color.RED, 50, 475); // side to throat
                     break;
                 default:

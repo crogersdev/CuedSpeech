@@ -50,7 +50,7 @@ public class VowelPagerAdapter extends FragmentStatePagerAdapter {
             case 1:
                 Log.d("VowelPagerAdapter", "position = 2");
                 args.putString("label", "Chin");
-                args.putString("phonemes", "/aw/, /ue/, /e/");
+                args.putString("phonemes", "/aw/, /oo/, /e/");
 
                 mSharedPrefs.getString("mnemonic_10", mMnemonicStr);
                 if (mMnemonicStr != null) {

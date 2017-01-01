@@ -40,10 +40,6 @@ public class VowelAnimations {
         anim.setFillAfter(true);
         anim.setDuration(mDuration);
         anim.setInterpolator(new AccelerateDecelerateInterpolator());
-        TranslateAnimation translate = new TranslateAnimation(0, 0, 0, yDelta);
-        translate.setRepeatMode(Animation.INFINITE);
-        translate.setRepeatCount(Animation.INFINITE);
-        //anim.addAnimation(translate);
 
         float scaleXstart = 1.0f;
         float scaleYstart = 1.0f;
@@ -57,12 +53,6 @@ public class VowelAnimations {
         return anim;
     }
     public static AnimationSet setChinToThroatAnimation() {
-        /*DisplayMetrics dm = new DisplayMetrics();
-        getActivity().getWindowManager().getDefaultDisplay().getMetrics(dm);
-
-        int originalPos[] = new int[2];
-        dot.getLocationOnScreen(originalPos);*/
-
         int yDelta = 280;
 
         AnimationSet anim = new AnimationSet(true);
@@ -70,6 +60,20 @@ public class VowelAnimations {
         anim.setDuration(mDuration);
         anim.setInterpolator(new AccelerateDecelerateInterpolator());
         TranslateAnimation translate = new TranslateAnimation(0, 0, 0, yDelta);
+        translate.setRepeatMode(Animation.INFINITE);
+        translate.setRepeatCount(Animation.INFINITE);
+        anim.addAnimation(translate);
+        return anim;
+    }
+    public static AnimationSet setSideToThroatAnimation() {
+        int xDelta = 500;
+        int yDelta = 325;
+
+        AnimationSet anim = new AnimationSet(true);
+        anim.setFillAfter(true);
+        anim.setDuration(mDuration);
+        anim.setInterpolator(new AccelerateDecelerateInterpolator());
+        TranslateAnimation translate = new TranslateAnimation(0, xDelta, 0, yDelta);
         translate.setRepeatMode(Animation.INFINITE);
         translate.setRepeatCount(Animation.INFINITE);
         anim.addAnimation(translate);

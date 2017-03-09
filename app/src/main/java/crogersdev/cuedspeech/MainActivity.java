@@ -14,6 +14,13 @@ public class MainActivity extends AppCompatActivity {
     int mVowelPrevPos = 0;
     ViewPager mViewPager;
 
+    /*
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt("tabState", getSelectedTab());
+    }*/
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

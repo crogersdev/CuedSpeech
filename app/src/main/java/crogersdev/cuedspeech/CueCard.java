@@ -32,8 +32,6 @@ public class CueCard extends Fragment {
     LayoutInflater mLayoutInflater = null;
     ViewGroup mContainer = null;
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, final ViewGroup container, Bundle savedInstanceState) {
         mLayoutInflater = inflater;
@@ -59,7 +57,7 @@ public class CueCard extends Fragment {
         Canvas canvas = null;
         View dotv = null;
         if (args.getString("animate_dot") != null) {
-            bitmap = Bitmap.createBitmap(1120, 991, Bitmap.Config.ARGB_8888); // dimensions hardcoded to be the size of the image (bleh!  feels like an ugly hack)
+            bitmap = Bitmap.createBitmap(1092, 800, Bitmap.Config.ARGB_8888); // dimensions hardcoded to be the size of the image (bleh!  feels like an ugly hack)
             canvas = new Canvas(bitmap);
         }
 
@@ -71,33 +69,33 @@ public class CueCard extends Fragment {
                     Log.d("CueCard", "width: " + b.getWidth());
                     Log.d("CueCard", "height: " + b.getHeight());
                     leaving this here for legacy purposes...*/
-                    dotv = new Dot(getActivity(), Color.RED, 350, 465); // getActivity used because we're a fragment and we need context
+                    dotv = new Dot(getActivity(), Color.RED, 350, 445); // getActivity used because we're a fragment and we need context
                     break;
                 case "tall blue tent":
-                    dotv = new Dot(getActivity(), Color.RED, 570, 680);
+                    dotv = new Dot(getActivity(), Color.RED, 570, 570);
                     break;
                 case "look big crabs":
-                    dotv = new Dot(getActivity(), Color.RED, 570, 900);
+                    dotv = new Dot(getActivity(), Color.RED, 570, 720);
                     break;
                 case "consonant alone":
-                    dotv = new Dot(getActivity(), Color.RED, 50, 475); // side
+                    dotv = new Dot(getActivity(), Color.RED, 50, 460); // side
                     break;
                 case "boat dock":
                     animation = VowelAnimations.setSideForwardAnimation();
-                    dotv = new Dot(getActivity(), Color.RED, 50, 475); // side forward
+                    dotv = new Dot(getActivity(), Color.RED, 50, 460); // side forward
                     break;
                 case "sun":
                     //animation = AnimationUtils.loadAnimation(getActivity(), R.anim.side_down);
                     animation = VowelAnimations.setSideDownAnimation();
-                    dotv = new Dot(getActivity(), Color.RED, 50, 475); // side down
+                    dotv = new Dot(getActivity(), Color.RED, 50, 460); // side down
                     break;
                 case "moist snails":
                     animation = VowelAnimations.setChinToThroatAnimation();
-                    dotv = new Dot(getActivity(), Color.RED, 570, 680); // chin to throat
+                    dotv = new Dot(getActivity(), Color.RED, 570, 570); // chin to throat
                     break;
                 case "light house":
                     animation = VowelAnimations.setSideToThroatAnimation();
-                    dotv = new Dot(getActivity(), Color.RED, 50, 475); // side to throat
+                    dotv = new Dot(getActivity(), Color.RED, 50, 445); // side to throat
                     break;
                 default:
                     break;

@@ -21,7 +21,7 @@ public class VowelAnimations {
         int originalPos[] = new int[2];
         dot.getLocationOnScreen(originalPos);*/
 
-        int yDelta = 400;
+        int yDelta = 340;
 
         AnimationSet anim = new AnimationSet(true);
         anim.setFillAfter(true);
@@ -34,7 +34,7 @@ public class VowelAnimations {
         return anim;
     }
     public static AnimationSet setSideForwardAnimation() {
-        int yDelta = 100;
+        int yDelta = 50;
 
         AnimationSet anim = new AnimationSet(true);
         anim.setFillAfter(true);
@@ -53,7 +53,7 @@ public class VowelAnimations {
         return anim;
     }
     public static AnimationSet setChinToThroatAnimation() {
-        int yDelta = 280;
+        int yDelta = 170;
 
         AnimationSet anim = new AnimationSet(true);
         anim.setFillAfter(true);

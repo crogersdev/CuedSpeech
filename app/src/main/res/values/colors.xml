@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#5f7c8a</color>
+    <color name="colorPrimaryDark">#445963</color>
+    <color name="colorAccent">#fec006</color>
+    <color name="windowBackground">#f0f0f0</color>
+    <color name="navigationBarColor">#445963</color>
 </resources>

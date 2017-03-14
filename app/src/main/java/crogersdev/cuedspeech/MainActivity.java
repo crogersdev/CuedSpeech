@@ -8,6 +8,8 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.viewpagerindicator.TitlePageIndicator;
+
 public class MainActivity extends AppCompatActivity {
 
     int mConsPrevPos = 0;
@@ -26,6 +28,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Logger.
+
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
 
@@ -36,8 +40,13 @@ public class MainActivity extends AppCompatActivity {
 
         mViewPager = (ViewPager) findViewById(R.id.pager);
         final ConsonantsPagerAdapter consonantsPagerAdapter = new ConsonantsPagerAdapter(getSupportFragmentManager(), this, mViewPager);
+        TitlePageIndicator consonantsTitleIndicator = (TitlePageIndicator)findViewById(R.id.titles);
+        consonantsTitleIndicator.setViewPager(mViewPager);
+
         mViewPager.setAdapter(consonantsPagerAdapter);
         final VowelPagerAdapter vowelPagerAdapter = new VowelPagerAdapter(getSupportFragmentManager(), this);
+        TitlePageIndicator vowelsTitleIndicator = (TitlePageIndicator)findViewById(R.id.titles);
+        //vowelsTitleIndicator.setViewPager(mViewPager);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override

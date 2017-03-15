@@ -36,16 +36,25 @@
         android:minHeight="?attr/actionBarSize"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-    <com.viewpagerindicator.TitlePageIndicator
-        android:id="@+id/titles"
+    <com.viewpagerindicator.CirclePageIndicator
+        android:id="@+id/circles"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_width="fill_parent" />
+        android:layout_gravity="bottom"
+        android:layout_below="@id/tab_layout"
+        android:padding="10dp"
+        android:background="@color/windowBackground"
+        app:radius="6dp"
+        app:fillColor="@color/indicatorFill"
+        app:pageColor="#ffffff"
+        app:strokeColor="@color/indicatorStroke"
+        app:strokeWidth="2dp"/>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@id/tab_layout"
+        android:layout_below="@id/circles"
         android:background="@color/windowBackground"/>
 
 </RelativeLayout>

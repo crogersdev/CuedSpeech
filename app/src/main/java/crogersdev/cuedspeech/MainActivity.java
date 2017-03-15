@@ -8,6 +8,7 @@ import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.viewpagerindicator.CirclePageIndicator;
 import com.viewpagerindicator.TitlePageIndicator;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     int mConsPrevPos = 0;
     int mVowelPrevPos = 0;
     ViewPager mViewPager;
+    CirclePageIndicator mCirclePageIndicator;
 
     /*
     @Override
@@ -37,13 +39,14 @@ public class MainActivity extends AppCompatActivity {
         tabLayout.addTab(tabLayout.newTab().setText("Vowels"));
         tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
 
-        mViewPager = (ViewPager) findViewById(R.id.pager);
-        final ConsonantsPagerAdapter consonantsPagerAdapter = new ConsonantsPagerAdapter(getSupportFragmentManager(), this, mViewPager);
+        mCirclePageIndicator = (CirclePageIndicator)findViewById(R.id.circles);
+        mViewPager = (ViewPager)findViewById(R.id.pager);
 
+        final ConsonantsPagerAdapter consonantsPagerAdapter = new ConsonantsPagerAdapter(getSupportFragmentManager(), this, mViewPager);
         mViewPager.setAdapter(consonantsPagerAdapter);
         final VowelPagerAdapter vowelPagerAdapter = new VowelPagerAdapter(getSupportFragmentManager(), this);
 
-        TitlePageIndicator tpi = (TitlePageIndicator)findViewById(R.id.titles);
+        mCirclePageIndicator.setViewPager(mViewPager);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -52,15 +55,13 @@ public class MainActivity extends AppCompatActivity {
                     case 0:
                         mVowelPrevPos = mViewPager.getCurrentItem();
                         mViewPager.setAdapter(consonantsPagerAdapter);
-                        mViewPager.setCurrentItem(mConsPrevPos);
+                        mCirclePageIndicator.setViewPager(mViewPager);
                         Log.d("crogersdev:MainActivity", "tab 0 selected, setting pager adapter to consonants");
-                        //tpi.setOnTab;
                         break;
                     case 1:
                         mConsPrevPos = mViewPager.getCurrentItem();
                         mViewPager.setAdapter(vowelPagerAdapter);
-                        mViewPager.setCurrentItem(mVowelPrevPos);
-
+                        mCirclePageIndicator.setViewPager(mViewPager);
                         Log.d("crogersdev:MainActivity", "tab 1 selected, setting pager adapter to vowels");
                         break;
                 }

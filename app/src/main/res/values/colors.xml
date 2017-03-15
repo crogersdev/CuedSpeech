@@ -5,4 +5,7 @@
     <color name="colorAccent">#fec006</color>
     <color name="windowBackground">#f0f0f0</color>
     <color name="navigationBarColor">#445963</color>
+
+    <color name="indicatorFill">#fec006</color>
+    <color name="indicatorStroke">#111111</color>
 </resources>

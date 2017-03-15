@@ -25,10 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("crogersdev:MainActivity", "here we go...");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Logger.
 
         Toolbar myToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(myToolbar);
@@ -40,13 +39,11 @@ public class MainActivity extends AppCompatActivity {
 
         mViewPager = (ViewPager) findViewById(R.id.pager);
         final ConsonantsPagerAdapter consonantsPagerAdapter = new ConsonantsPagerAdapter(getSupportFragmentManager(), this, mViewPager);
-        TitlePageIndicator consonantsTitleIndicator = (TitlePageIndicator)findViewById(R.id.titles);
-        consonantsTitleIndicator.setViewPager(mViewPager);
 
         mViewPager.setAdapter(consonantsPagerAdapter);
         final VowelPagerAdapter vowelPagerAdapter = new VowelPagerAdapter(getSupportFragmentManager(), this);
-        TitlePageIndicator vowelsTitleIndicator = (TitlePageIndicator)findViewById(R.id.titles);
-        //vowelsTitleIndicator.setViewPager(mViewPager);
+
+        TitlePageIndicator tpi = (TitlePageIndicator)findViewById(R.id.titles);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -57,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
                         mViewPager.setAdapter(consonantsPagerAdapter);
                         mViewPager.setCurrentItem(mConsPrevPos);
                         Log.d("crogersdev:MainActivity", "tab 0 selected, setting pager adapter to consonants");
+                        //tpi.setOnTab;
                         break;
                     case 1:
                         mConsPrevPos = mViewPager.getCurrentItem();

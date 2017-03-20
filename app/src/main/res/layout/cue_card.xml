@@ -35,23 +35,6 @@
             android:text="phonemes"
             android:id="@+id/cuecard_phonemes"
             android:layout_below="@+id/cuecard_mnemonic"/>
-
-    <!--
-        <android.support.v7.widget.CardView
-            android:layout_width="400dp"
-            android:layout_height="400dp"
-            android:elevation="12dp"
-            android:id="@+id/cue_img_holder"
-            app:cardCornerRadius="60dp"
-            android:innerRadius="5dp"
-            android:shape="ring"
-            android:thicknessRatio="1.9"
-            android:layout_below="@+id/cuecard_phonemes">
-            -->
-
-            <!--
-        </android.support.v7.widget.CardView>-->
-
     </RelativeLayout>
 
     <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
@@ -64,7 +47,7 @@
             android:layout_width="match_parent"
             android:id="@+id/cue_image" />
         <ImageView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/dot_view"
             android:layout_centerInParent="true"

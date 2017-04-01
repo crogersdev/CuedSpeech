@@ -23,6 +23,8 @@ public class ConsonantsPagerAdapter extends FragmentStatePagerAdapter {
         mSharedPrefs = mContext.getSharedPreferences("MnemonicPrefs", Context.MODE_PRIVATE);
     }
 
+
+
     @Override
     public Fragment getItem(int pos) {
         Fragment fragment = new CueCard();

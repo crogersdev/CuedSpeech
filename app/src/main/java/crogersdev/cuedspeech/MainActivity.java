@@ -1,5 +1,6 @@
 package crogersdev.cuedspeech;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -17,6 +18,10 @@ public class MainActivity extends AppCompatActivity {
     int mVowelPrevPos = 0;
     ViewPager mViewPager;
     CirclePageIndicator mCirclePageIndicator;
+
+    Integer blah = 0;
+
+    private SharedPreferences mSharedPreferences;
 
     /*
     @Override
@@ -41,12 +46,13 @@ public class MainActivity extends AppCompatActivity {
 
         mCirclePageIndicator = (CirclePageIndicator)findViewById(R.id.circles);
         mViewPager = (ViewPager)findViewById(R.id.pager);
-
         final ConsonantsPagerAdapter consonantsPagerAdapter = new ConsonantsPagerAdapter(getSupportFragmentManager(), this, mViewPager);
         mViewPager.setAdapter(consonantsPagerAdapter);
         final VowelPagerAdapter vowelPagerAdapter = new VowelPagerAdapter(getSupportFragmentManager(), this);
 
         mCirclePageIndicator.setViewPager(mViewPager);
+
+        mSharedPreferences = this.getApplicationContext().getSharedPreferences("MnemonicPrefs", Context.MODE_PRIVATE);
 
         tabLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
             @Override
@@ -62,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
                         mConsPrevPos = mViewPager.getCurrentItem();
                         mViewPager.setAdapter(vowelPagerAdapter);
                         mCirclePageIndicator.setViewPager(mViewPager);
+                        mViewPager.setCurrentItem(mViewPager.getCurrentItem());
                         Log.d("crogersdev:MainActivity", "tab 1 selected, setting pager adapter to vowels");
                         break;
                 }

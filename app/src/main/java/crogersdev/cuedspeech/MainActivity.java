@@ -3,11 +3,17 @@ package crogersdev.cuedspeech;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.support.design.widget.TabLayout;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import com.viewpagerindicator.CirclePageIndicator;
 import com.viewpagerindicator.TitlePageIndicator;
@@ -19,16 +25,11 @@ public class MainActivity extends AppCompatActivity {
     ViewPager mViewPager;
     CirclePageIndicator mCirclePageIndicator;
 
-    Integer blah = 0;
+    private DrawerLayout mDrawerLayout;
+    private String[] mDrawerOptions = new String[]{"Dictionary", "Quizzes", "Preferences"};
+    private ListView mDrawerList;
 
     private SharedPreferences mSharedPreferences;
-
-    /*
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        outState.putInt("tabState", getSelectedTab());
-    }*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
         final VowelPagerAdapter vowelPagerAdapter = new VowelPagerAdapter(getSupportFragmentManager(), this);
 
         mCirclePageIndicator.setViewPager(mViewPager);
+
+        mDrawerLayout = (DrawerLayout)findViewById(R.id.drawer_layout);
+        mDrawerList = (ListView)findViewById(R.id.left_drawer);
 
         mSharedPreferences = this.getApplicationContext().getSharedPreferences("MnemonicPrefs", Context.MODE_PRIVATE);
 
@@ -87,6 +91,17 @@ public class MainActivity extends AppCompatActivity {
 
         if (savedInstanceState != null) {
             mViewPager.setCurrentItem(savedInstanceState.getInt("currentItem", 0));
+        }
+
+        mDrawerList.setAdapter(new ArrayAdapter<String>(this, R.layout.drawer_list_item, mDrawerOptions));
+        mDrawerList.setOnItemClickListener(new DrawerItemClickListener());
+    }
+
+    private class DrawerItemClickListener implements ListView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            Toast.makeText(MainActivity.this, "you clicked me!  i like you.", Toast.LENGTH_SHORT).show();
+            mDrawerLayout.closeDrawer(mDrawerList);
         }
     }
 
